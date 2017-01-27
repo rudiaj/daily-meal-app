@@ -55,7 +55,7 @@ button:focus {
   outline: none;
 }
 body{
-  background-color: rgb(249,250,251);
+  background-color: rgb(255,255,255);
 }
 #main {
   font-family: 'Lato', sans-serif ;
@@ -95,7 +95,6 @@ body{
     }
   }
 }
-
 .mdl-card__title{
   align-items: initial;
 }
@@ -115,10 +114,11 @@ body{
       flex-direction: column;
       display:  flex;
       align-items: flex-start;
-      justify-content: flex-end;
+      justify-content: space-between;
       background: linear-gradient(rgba(44, 48, 60, 0), rgba(44, 48, 60, 1));
       width:  100%;
       .card-title{ 
+        line-height:calc(20pt * 1.6);
         margin: 0;
         font-weight: 700;
         display: block;
@@ -129,25 +129,52 @@ body{
         margin: 0;
         display: inline;
         font-size: 14pt;
-        color: rgba(255, 255,255, 0.7);
+        line-height:calc(14pt * 1.6);
+        color: rgba(255, 255,255, 1);
+      }
+      .card-info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i{
+          display: inline;
+          font-size: 12pt;
+          line-height:calc(12pt * 1.6);
+          margin-right: 16px;
+          color: rgba(255, 255,255, 0.9);
+
+        }
+        .opet-hours{
+          margin: 0;
+          display: inline;
+          font-size: 12pt;
+          line-height:calc(12pt * 1.6);
+          color: rgba(255, 255,255, 0.9);
+        }
+      }
+      .open-status{
+        padding-left: 34px;
+        display: block;
+        line-height:calc(12pt * 1.6);
+        font-size: 12pt;
+        color: white;
+      }
+      .red{
+        color: rgb(244,67,54);
+        text-shadow:0 0 3px rgb(244,67,54);
+      }
+      .green{
+        color: rgb(76,175,80);
+        text-shadow:0 0 3px rgb(76,175,80);
       }
     }
   }
   .content{
-    padding: 16px; 
-    .list{
-      -webkit-padding-start:0;
-      .list-item{
-        display: flex;
-        .bold{
-          align-self: flex-end;
-          font-weight: 700;
-          flex: 1;
-          display: flex;
-          justify-content: flex-end;
-        }
-      }
-    }
+    padding: 16px;
+    table{
+      border:none;
+      margin:auto
+    } 
   }
 }
 .orange-button{
@@ -186,12 +213,16 @@ body{
 .mdl-cell.ng-leave-active{
   opacity: 0;
 }
-
 .content.ng-hide{
   opacity: 0;
-}
+  }
 
-
+  /*media querys*/
+  @media (max-width: 768px){
+    .search-field{
+      width: 65vw !important;
+    }
+  }
 }
 
 

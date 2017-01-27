@@ -1,36 +1,59 @@
 
 <main id="main">
-  <div class="search-wrapper mdl-shadow--4dp">
+<section class="search-wrapper ">
     <div class="search-field-wrapper">
       <input placeholder="Search by: Name, Adress, etc." class="search-field mdl-shadow--4dp" type="text" ng-model="searchRestaurant">
       <i class="material-icons search-icon">search</i>
     </div>
-  </div>
-  <div class="mdl-grid">
+  </section>
+  <sectipn class="mdl-grid">
     <article class="mdl-cell mdl-cell--4-col" ng-repeat="restaurant in vm.restaurants | filter:searchRestaurant" >
       <div class="mdl-card card mdl-shadow--16dp">
         <div class="mdl-card__title card-content" style="background-image: url('{{restaurant.image}}');">
           <div class="card-content-wrapper">
-            <h2 class="card-title">{{ restaurant.name }}</h2>
-            <div> 
-             <h3 class="card-subtitle">{{restaurant.address.street}},</h3>
-             <h3 class="card-subtitle">{{restaurant.address.city}}</h3>
+            <div>
+              <h2 class="card-title">{{ restaurant.name }}</h2>
+              <div> 
+               <h3 class="card-subtitle">{{restaurant.address.street}},</h3>
+               <h3 class="card-subtitle">{{restaurant.address.city}}</h3>
+             </div>
+           </div>
+           <div>
+             <div class="card-info">
+               <i class="material-icons">access_time</i>
+               <h3 class="opet-hours">Open Hours Today: {{restaurant.open_status.open_hours}}</h3>    
+
+             </div>
+             <span ng-show="restaurant.open_status.open_now === false" class="open-status red"> Closed</span>
+             <span ng-show="restaurant.open_status.open_now === true" class="open-status green"> Open</span>
            </div>
          </div>
        </div>
        <div class="content-wrapper">
          <div class="content" ng-show="showMenu">
-           <ul class="list">
-             <li class="list-item" ng-repeat="offer in restaurant.offers">{{offer.name}} <span>${{offer.price}}</span> 
-             <span class="bold">{{offer.category}}</span>
-             </li>
-           </ul>
-         </div>
-       </div>
-     </div>
-     <button class="orange-button mdl-shadow--8dp" ng-click="showMenu = !showMenu">expand </button>
-   </article>
- </div>
+           <table class="mdl-data-table mdl-js-data-table">
+            <thead>
+              <tr>
+                <th class="mdl-data-table__cell--non-numeric">Meal</th>
+                <th>Price</th>
+                <th>Category</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="offer in restaurant.offers">
+                <td class="mdl-data-table__cell--non-numeric">{{offer.name}}</td>
+                <td class="mdl-data-table__cell--non-numeric">${{offer.price}}</td>
+                <td class="mdl-data-table__cell--non-numeric">{{offer.category}}</td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+      </div>
+    </div>
+    <button class="orange-button mdl-shadow--8dp" ng-click="showMenu = !showMenu">expand </button>
+  </article>
+</sectipn>
 </main>
 </div>
 
