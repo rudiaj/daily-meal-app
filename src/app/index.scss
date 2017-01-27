@@ -1,0 +1,204 @@
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+ // bower:scss
+ // endbower
+
+ @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+ @import 'variables';
+
+ @font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+  local('MaterialIcons-Regular'),
+  url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.woff2) format('woff2'),
+  url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.woff) format('woff'),
+  url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Lato', sans-serif ;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+body{
+  background-color: rgb(249,250,251);
+}
+#main {
+  font-family: 'Lato', sans-serif ;
+  padding: 20px;
+  .search-wrapper{
+    transition: all 0.3s ease-in-out;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    margin: 16px;
+    .search-field-wrapper{
+      position: relative;
+      .search-field{
+        transition: all 0.3s ease-in-out;
+        padding: 8px;
+        font-size: 12pt;
+        font-weight: 300;
+        border: none;
+        border-radius: 3pt;
+        height: 44px;
+        width: 500px;
+        &:hover{
+          box-shadow: 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12), 0 5px 5px -3px rgba(0,0,0,.2);
+        }
+        &:focus{
+         @extend :hover;
+       }
+     }
+     .search-icon{
+      color: $dustyOrange;
+      position: absolute;
+      font-size: 20pt;
+      right: 8px;
+      top: calc(50% - 13px);
+    }
+  }
+}
+
+.mdl-card__title{
+  align-items: initial;
+}
+.card{
+  transition: all 0.3s ease-in-out;
+  width: initial;
+  border-radius:5pt;
+  .card-content{
+    transition: all 0.3s ease-in-out;
+    min-height: 200pt;
+    padding: 0;
+    background-position: center;
+    background-size: cover;
+    flex:1;
+    .card-content-wrapper{
+      padding: 16px;
+      flex-direction: column;
+      display:  flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      background: linear-gradient(rgba(44, 48, 60, 0), rgba(44, 48, 60, 1));
+      width:  100%;
+      .card-title{ 
+        margin: 0;
+        font-weight: 700;
+        display: block;
+        font-size: 20pt;
+        color: white;
+      }
+      .card-subtitle{
+        margin: 0;
+        display: inline;
+        font-size: 14pt;
+        color: rgba(255, 255,255, 0.7);
+      }
+    }
+  }
+  .content{
+    padding: 16px; 
+    .list{
+      -webkit-padding-start:0;
+      .list-item{
+        display: flex;
+        .bold{
+          align-self: flex-end;
+          font-weight: 700;
+          flex: 1;
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+}
+.orange-button{
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  color: white;
+  font-size: 14pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 16px;
+  border-radius: 50pt;
+  border:none;
+  width: 165pt;
+  height: 40pt;
+  background: linear-gradient(to right, rgb( 241, 123, 48), rgb(249, 178, 94));
+  &:hover{
+    box-shadow:0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2);
+  }
+}
+.mdl-textfield__label:after {
+  background: $dustyOrange;
+}
+
+.mdl-cell.ng-enter{
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+.mdl-cell.ng-enter.ng-enter-active{
+ transition: all 0.3s ease-in-out;
+ opacity: 1;
+}
+.mdl-cell.ng-leave{
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+.mdl-cell.ng-leave-active{
+  opacity: 0;
+}
+
+.content.ng-hide{
+  opacity: 0;
+}
+
+
+}
+
+
+
+/**
+ *  Do not remove the comment below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+ // injector
+ // endinjector
